@@ -106,7 +106,7 @@ Parking Occupancy
 - [Tejashree Hiremath](https://github.com/Tejashreeh17)
 - [Vinit Jagwale](https://github.com/VinitJagwale)
 - [Samiksha Atiwadkar](https://github.com/jyotibasm)
-- [Jaishivarai Bagilgekar](https://github.com/jyotibasm)
+- [Jaishivarai Bagilgekar](https://github.com/Jaishivarai)
 
 
 
