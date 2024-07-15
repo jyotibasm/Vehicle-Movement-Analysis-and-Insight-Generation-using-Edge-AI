@@ -1,0 +1,57 @@
+{% extends "index.html" %}
+
+{% block title %}Vehicle Matching{% endblock %}
+
+{% block content %}
+<div class="container mx-auto mt-8">
+    <h2 class="text-2xl font-semibold text-start px-4 text-gray-500 mb-4">Vehicle Matching</h2>
+    <div class="flex justify-around">
+        <!-- Authorized License Plates Table -->
+        <div class="w-1/2 p-4">
+            <h3 class="text-base font-bold mb-2 text-green-500">Authorized</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white shadow-md rounded-lg">
+                    <thead class="bg-gray-200 text-gray-600 uppercase text-xs leading-normal">
+                        <tr>
+                            <th class="py-3 px-6 text-left">License Plate</th>
+                            <th class="py-3 px-6 text-left">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-600 text-sm font-light">
+                        {% for vehicle in data %}
+                        <tr class="border-b border-gray-200 hover:bg-gray-100">
+                            <td class="py-3 px-6 text-left">{{vehicle['Authorized']}}</td>
+                            <td class="py-3 px-6 text-left"> Authorized </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Unauthorized License Plates Table -->
+        <div class="w-1/2 p-4">
+            <h3 class="text-base font-bold mb-2 text-red-500">Unauthorized</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white shadow-md rounded-lg">
+                    <thead class="bg-gray-200 text-gray-600 uppercase text-xs leading-normal">
+                        <tr>
+                            <th class="py-3 px-6 text-left">License Plate</th>
+                            <th class="py-3 px-6 text-left">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-600 text-sm font-light">
+                        {% for i in range (column_length) %}
+                        <tr class="border-b border-gray-200 hover:bg-gray-100">
+                            <td class="py-3 px-6 text-left">{{data[i]['Unauthorized']}}</td>
+                            <td class="py-3 px-6 text-left"> Unauthorized </td>
+                        </tr>
+                        {% endfor %} 
+                        <!-- Additional rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

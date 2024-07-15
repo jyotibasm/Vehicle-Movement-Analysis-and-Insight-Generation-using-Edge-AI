@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Flask App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Apply font-sans to the html element */
+        html {
+            font-family: 'Inter', sans-serif; /* Replace 'Inter' with your preferred sans-serif font */
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen">
+
+    <!-- Header -->
+    <header class="bg-blue-100 p-4 h-12 shadow-lg">
+        <div class="container mx-auto flex justify-center items-center h-full">
+            <h1 class="text-blue-900 text-3xl font-bold">AEye</h1>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="flex-grow bg-gray-100 w-full">
+
+        <div class="flex justify-center items-center w-full h-full">
+    
+            <!-- First child div (sidebar) -->
+            <div class="sidebar bg-slate-700 w-1/6 h-full my-1">
+                <nav>
+                    <ul>
+                        <!-- <li class="font-semibold">
+                            <a href="/" class="block py-2 px-4 text-gray-300 bg-slate-600 hover:bg-slate-600">Home</a>
+                        </li> -->
+                        <li class="font-normal">
+                            <a href="/Vehicle Movement Patterns" class="block py-2 px-4 text-gray-300 bg-slate-600 hover:bg-slate-600">Vehicle Movement Patterns</a>
+                        </li>
+                        <li class="font-normal">
+                            <a href="/Vehicle Matching" class="block py-2 px-4 text-gray-300  hover:bg-slate-600">Vehicle Matching</a>
+                        </li>
+                        <li class="font-normal">
+                            <a href="/Parking Occupancy" class="block py-2 px-4 text-gray-300 hover:bg-slate-600">Parking Occupancy</a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+                       
+
+
+    
+            <!-- Second child div (content) -->
+            <div class="content w-5/6 h-full p-6 bg-gray-100 flex justify-start items-start flex-col">
+                <div class="herosec flex justify-center items-start w-full h-100 ">
+                    <img class="w-1/2 h-full object-cover rounded-3xl" src="https://futuristech.com.au/wp-content/uploads/2022/08/Object-Detection-Cpmputer-vision-AI.webp" alt="Object Detection AI Image" />
+                    <div class="text-justify w-1/2 h-full p-4 px-6 text-xs flex justify-center items-center flex-col">
+                        <h2 class="font-bold text-lg">Vehicle Movement Analysis and Insight Generation in a College Campus using Edge AI</h2>
+                        <p class="text-sm">The primary objective of this project is to develop an Edge AI-based solution that can analyse vehicle movement in and out of a college campus using data from cameras capturing vehicle photos and license plates. The solution should provide insights on vehicle movement patterns, parking occupancy, and match vehicles to an approved vehicle database.</p>
+                    </div>
+                </div>
+                <div class="data">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+            
+                    
+            </div>
+    
+        </div>
+    
+    </main>
+    <!-- Footer -->
+    <!-- <footer class="bg-white text-white py-4 h-4">
+        <div class="container mx-auto flex justify-center items-center h-full">
+            <p class="text-sm">&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer> -->
+
+</body>
+</html>
